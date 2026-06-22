@@ -21,6 +21,7 @@ export default function RootLayout({
   <nav className="border-b px-8 py-4">
     <div className="mx-auto flex max-w-5xl gap-6">
       <Link href="/">Home</Link>
+      <Link href="/pricing">Pricing</Link>
       <Link href="/about">About</Link>
       <Link href="/demo">Demo</Link>
       <Link href="/contact">Contact</Link>
