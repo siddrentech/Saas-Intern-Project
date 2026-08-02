@@ -39,7 +39,7 @@ export default function HomePage() {
               <Link href="/pricing">View Pricing</Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="/pricing">Get Started</Link>
+              <Link href="/signup">Get Started</Link>
             </Button>
           </div>
         </div>

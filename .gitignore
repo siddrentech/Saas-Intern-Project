@@ -23,16 +23,40 @@
 # misc
 .DS_Store
 *.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
 
 # debug
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# environment variables and local secrets
 .env*
-.env.local
+!.env.example
+.env.vault
+*.secret
+*.secrets
+credentials.json
+service-account*.json
+
+# generated local authentication links
+.dev-verification-links.json
+.dev-password-reset-links.json
+
+# local databases
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# local service/tool state
+.stripe/
 
 # vercel
 .vercel

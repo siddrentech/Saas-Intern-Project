@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { pricingPlans } from "@/lib/pricing";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +16,7 @@ export default function PricingPage() {
           Simple pricing for the SaaS portal POC
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Choose a placeholder plan. Stripe integration will be added in Sprint 3.
+          Choose a plan and subscribe with Stripe Checkout.
         </p>
       </section>
 
@@ -40,9 +39,12 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              <Button className="w-full" asChild>
-                <Link href="/signup">{plan.cta}</Link>
-              </Button>
+              <form action="/api/stripe/checkout" method="post">
+                <input type="hidden" name="plan" value={plan.slug} />
+                <Button type="submit" className="w-full">
+                  {plan.cta}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         ))}

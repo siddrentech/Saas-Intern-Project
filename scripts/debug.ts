@@ -4,7 +4,7 @@ console.log("DATABASE_URL:", process.env.DATABASE_URL)
 
 try {
   console.log("About to import db...")
-  const dbModule = require("../../db")
+  const dbModule = await import("../db")
   console.log("DB module:", dbModule)
   console.log("DB object:", dbModule.db)
 } catch (error) {
