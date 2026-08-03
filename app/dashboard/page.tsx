@@ -71,7 +71,7 @@ export default async function DashboardPage() {
       <div className="mt-8 flex flex-wrap gap-3">
         <Link
           href="/settings/account"
-          className="rounded-md bg-slate-900 px-4 py-2 text-sm font-medium text-white"
+          className="rounded-md bg-red-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-red-800"
         >
           Account settings
         </Link>

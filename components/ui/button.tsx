@@ -17,9 +17,9 @@ export function Button({
 }: ButtonProps) {
   const variantClass =
     variant === "outline"
-      ? "border border-foreground/20 bg-transparent text-foreground hover:bg-muted"
-      : "bg-foreground text-background hover:bg-foreground/85";
-  const classes = `inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors ${variantClass} ${className}`;
+      ? "border border-black/20 bg-white/70 text-foreground hover:border-red-300 hover:bg-red-50 hover:text-red-800"
+      : "bg-red-700 text-white shadow-sm hover:bg-red-800";
+  const classes = `inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-semibold transition-all hover:-translate-y-0.5 ${variantClass} ${className}`;
 
   if (asChild && isValidElement(children)) {
     const child = children as ReactElement<{ className?: string }>;

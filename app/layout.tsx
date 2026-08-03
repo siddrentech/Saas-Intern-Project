@@ -1,5 +1,5 @@
-import Link from "next/link"
 import type { Metadata } from "next";
+import { SiteNav } from "@/components/site-nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,23 +17,8 @@ export default function RootLayout({
       lang="en"
       className="h-full antialiased"
     >
-      <body className="min-h-screen bg-slate-50 text-slate-950">
-        <nav className="border-b border-slate-200 bg-white px-6 py-4">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium text-slate-700">
-            <Link href="/" className="text-slate-950">
-              SwiftSell
-            </Link>
-            <Link href="/pricing">Pricing</Link>
-            <Link href="/about">About</Link>
-            <Link href="/demo">Demo</Link>
-            <Link href="/contact">Contact</Link>
-            <Link href="/dashboard">Dashboard</Link>
-            <Link href="/settings/account">Account</Link>
-            <Link href="/settings/organization">Organization</Link>
-            <Link href="/login">Login</Link>
-            <Link href="/signup">Sign up</Link>
-          </div>
-        </nav>
+      <body className="min-h-screen text-slate-950">
+        <SiteNav />
         {children}
       </body>
     </html>

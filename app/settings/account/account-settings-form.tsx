@@ -116,7 +116,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
         <button
           type="submit"
           disabled={isSavingProfile}
-          className="mt-4 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-4 rounded-lg bg-red-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-800 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isSavingProfile ? "Saving..." : "Save name"}
         </button>
@@ -171,7 +171,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
         <button
           type="submit"
           disabled={isChangingPassword}
-          className="mt-4 rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70"
+          className="mt-4 rounded-lg bg-red-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-red-800 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isChangingPassword ? "Changing..." : "Change password"}
         </button>

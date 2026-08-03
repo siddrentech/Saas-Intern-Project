@@ -3,7 +3,7 @@ import type { ComponentProps } from "react";
 export function Card({ className = "", ...props }: ComponentProps<"div">) {
   return (
     <div
-      className={`rounded-lg border border-foreground/15 bg-background shadow-sm ${className}`}
+      className={`rounded-xl border border-black/10 border-t-green-700/60 bg-white/90 shadow-sm transition-shadow hover:shadow-md ${className}`}
       {...props}
     />
   );
