@@ -21,8 +21,6 @@ export const auth = betterAuth({
       if (process.env.NODE_ENV !== "production") {
         saveDevPasswordResetLink(user.email, url)
       }
-      console.log("Password reset link for", user.email)
-      console.log(url)
     },
   },
 

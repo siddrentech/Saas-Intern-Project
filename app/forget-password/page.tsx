@@ -27,6 +27,11 @@ export default function ForgetPasswordPage() {
       const resetResponse = await fetch(
         `/api/dev/password-reset-link?email=${encodeURIComponent(emailAddress)}`,
       )
+
+      if (!resetResponse.ok) {
+        return ""
+      }
+
       const resetData = (await resetResponse.json()) as {
         url?: string | null
       }
@@ -41,6 +46,14 @@ export default function ForgetPasswordPage() {
     return ""
   }
 
+  const clearResetLink = async (emailAddress: string) => {
+    await fetch("/api/dev/password-reset-link", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: emailAddress }),
+    })
+  }
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setError("")
@@ -50,10 +63,17 @@ export default function ForgetPasswordPage() {
     const emailAddress = email.trim().toLowerCase()
 
     try {
-      await authClient.requestPasswordReset({
+      await clearResetLink(emailAddress)
+
+      const { error: requestError } = await authClient.requestPasswordReset({
         email: emailAddress,
         redirectTo: "/reset-password",
       })
+
+      if (requestError) {
+        setError(requestError.message ?? "We could not create a reset link.")
+        return
+      }
 
       const devResetLink = await getResetLink(emailAddress)
 
@@ -63,8 +83,8 @@ export default function ForgetPasswordPage() {
         return
       }
 
-      setMessage(
-        "If an account exists for that email, a reset link was created. Check the dev server console if it does not appear below.",
+      setError(
+        "A reset link could not be displayed. Confirm that the email belongs to an existing account and try again.",
       )
     } catch (err) {
       console.error(err)

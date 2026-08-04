@@ -1,4 +1,7 @@
-import { getDevPasswordResetLink } from "@/lib/dev-verification-links"
+import {
+  deleteDevPasswordResetLink,
+  getDevPasswordResetLink,
+} from "@/lib/dev-verification-links"
 import { NextResponse } from "next/server"
 
 export function GET(request: Request) {
@@ -16,4 +19,19 @@ export function GET(request: Request) {
   return NextResponse.json({
     url: getDevPasswordResetLink(email),
   })
+}
+
+export async function DELETE(request: Request) {
+  if (process.env.NODE_ENV === "production") {
+    return NextResponse.json({ error: "Not available in production." }, { status: 404 })
+  }
+
+  const body = (await request.json()) as { email?: string }
+
+  if (!body.email) {
+    return NextResponse.json({ error: "Email is required." }, { status: 400 })
+  }
+
+  deleteDevPasswordResetLink(body.email)
+  return NextResponse.json({ success: true })
 }

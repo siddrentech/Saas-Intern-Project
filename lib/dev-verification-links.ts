@@ -50,3 +50,7 @@ export function saveDevPasswordResetLink(email: string, url: string) {
 export function getDevPasswordResetLink(email: string) {
   return getLinks(passwordResetLinksPath)[email.toLowerCase()] ?? null
 }
+
+export function deleteDevPasswordResetLink(email: string) {
+  deleteLink(passwordResetLinksPath, email)
+}
