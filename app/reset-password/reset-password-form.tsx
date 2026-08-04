@@ -63,9 +63,10 @@ export function ResetPasswordForm({ tokenFromPath = "" }: ResetPasswordFormProps
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
-      <div className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h1 className="text-2xl font-semibold text-slate-900">Reset password</h1>
+    <main className="portal-canvas flex items-center justify-center px-4 py-16">
+      <div className="portal-panel w-full max-w-md p-8 sm:p-10">
+        <p className="portal-eyebrow">Secure your account</p>
+        <h1 className="mt-3 text-3xl font-black text-slate-950">Reset password</h1>
         <p className="mt-2 text-sm text-slate-600">
           Choose a new password for your account.
         </p>
@@ -79,7 +80,7 @@ export function ResetPasswordForm({ tokenFromPath = "" }: ResetPasswordFormProps
               onChange={(event) => setNewPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="Enter a new password"
             />
           </label>
@@ -92,7 +93,7 @@ export function ResetPasswordForm({ tokenFromPath = "" }: ResetPasswordFormProps
               onChange={(event) => setConfirmPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="Confirm your new password"
             />
           </label>

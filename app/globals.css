@@ -31,3 +31,89 @@ body {
 ::selection {
   background: rgb(197 31 50 / 22%);
 }
+
+@layer components {
+  .portal-canvas {
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100vh - 73px);
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 10% 15%, rgb(34 197 94 / 16%), transparent 27rem),
+      radial-gradient(circle at 92% 82%, rgb(220 38 38 / 16%), transparent 28rem),
+      #09090b;
+  }
+
+  .portal-canvas::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    content: "";
+    pointer-events: none;
+    opacity: 0.8;
+    background-image:
+      linear-gradient(rgb(255 255 255 / 2.5%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 2.5%) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+
+  .portal-canvas::after {
+    position: absolute;
+    right: -5rem;
+    top: 6rem;
+    z-index: -1;
+    width: 18rem;
+    height: 18rem;
+    content: "";
+    pointer-events: none;
+    border: 3rem solid rgb(34 197 94 / 9%);
+    border-radius: 9999px;
+  }
+
+  .portal-panel {
+    position: relative;
+    border: 1px solid rgb(255 255 255 / 14%);
+    border-top-color: rgb(34 197 94 / 65%);
+    border-radius: 1.5rem;
+    background: rgb(255 255 255 / 96%);
+    color: #18181b;
+    box-shadow: 0 30px 80px rgb(0 0 0 / 38%);
+  }
+
+  .portal-panel::before {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    content: "";
+    border-radius: 9999px;
+    background: #22c55e;
+    box-shadow: -1rem 0 #dc2626, -2rem 0 #18181b;
+  }
+
+  .portal-eyebrow {
+    color: #16a34a;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .portal-field {
+    margin-top: 0.375rem;
+    width: 100%;
+    border: 1px solid #d4d4d8;
+    border-radius: 0.6rem;
+    background: white;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.875rem;
+    outline: none;
+    transition: border-color 150ms, box-shadow 150ms;
+  }
+
+  .portal-field:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgb(220 38 38 / 12%);
+  }
+}

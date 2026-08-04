@@ -21,15 +21,18 @@ export default async function OnboardingPage() {
   }
 
   return (
-    <main className="mx-auto max-w-xl p-8">
-      <h1 className="text-3xl font-bold">Create your organization</h1>
-      <p className="mt-3 text-muted-foreground">
+    <main className="portal-canvas flex items-center justify-center px-6 py-16">
+      <section className="portal-panel w-full max-w-xl p-8 sm:p-10">
+      <p className="portal-eyebrow">Build your workspace</p>
+      <h1 className="mt-3 text-3xl font-black">Create your organization</h1>
+      <p className="mt-3 text-zinc-600">
         This is the company account your future subscription will attach to.
       </p>
 
       <div className="mt-8">
         <OnboardingForm />
       </div>
+      </section>
     </main>
   )
 }

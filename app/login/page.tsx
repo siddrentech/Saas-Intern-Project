@@ -102,9 +102,10 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
-      <div className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h1 className="text-2xl font-semibold text-slate-900">Sign in</h1>
+    <main className="portal-canvas flex items-center justify-center px-4 py-16">
+      <div className="portal-panel w-full max-w-md p-8 sm:p-10">
+        <p className="portal-eyebrow">Welcome back</p>
+        <h1 className="mt-3 text-3xl font-black text-slate-950">Sign in</h1>
         <p className="mt-2 text-sm text-slate-600">
           Use the account you created after verifying your email.
         </p>
@@ -118,7 +119,7 @@ export default function LoginPage() {
               onChange={(event) => setEmail(event.target.value)}
               required
               autoComplete="email"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="you@example.com"
             />
           </label>
@@ -131,7 +132,7 @@ export default function LoginPage() {
               onChange={(event) => setPassword(event.target.value)}
               required
               autoComplete="current-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="Your password"
             />
           </label>

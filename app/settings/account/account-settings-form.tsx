@@ -98,7 +98,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
     <div className="space-y-8">
       <form
         onSubmit={handleProfileSubmit}
-        className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="portal-panel p-6"
       >
         <h2 className="text-lg font-semibold text-slate-950">Profile</h2>
         <label className="mt-4 block text-sm font-medium text-slate-700">
@@ -109,7 +109,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
             onChange={(event) => setName(event.target.value)}
             required
             autoComplete="name"
-            className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+            className="portal-field"
           />
         </label>
 
@@ -127,7 +127,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
 
       <form
         onSubmit={handlePasswordSubmit}
-        className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="portal-panel p-6"
       >
         <h2 className="text-lg font-semibold text-slate-950">Password</h2>
         <div className="mt-4 space-y-4">
@@ -139,7 +139,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
               onChange={(event) => setCurrentPassword(event.target.value)}
               required
               autoComplete="current-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
             />
           </label>
 
@@ -151,7 +151,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
               onChange={(event) => setNewPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
             />
           </label>
 
@@ -163,7 +163,7 @@ export function AccountSettingsForm({ initialName }: AccountSettingsFormProps) {
               onChange={(event) => setConfirmPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
             />
           </label>
         </div>

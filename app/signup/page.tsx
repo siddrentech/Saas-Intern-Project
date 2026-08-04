@@ -109,9 +109,10 @@ export default function SignupPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4 py-12">
-      <div className="w-full max-w-md rounded-xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h1 className="text-2xl font-semibold text-slate-900">Create your account</h1>
+    <main className="portal-canvas flex items-center justify-center px-4 py-16">
+      <div className="portal-panel w-full max-w-md p-8 sm:p-10">
+        <p className="portal-eyebrow">Join SwiftSell</p>
+        <h1 className="mt-3 text-3xl font-black text-slate-950">Create your account</h1>
         <p className="mt-2 text-sm text-slate-600">
           Start your SwiftSell SaaS portal account with your email and password.
         </p>
@@ -125,7 +126,7 @@ export default function SignupPage() {
               onChange={(event) => setName(event.target.value)}
               required
               autoComplete="name"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="Your name"
             />
           </label>
@@ -138,7 +139,7 @@ export default function SignupPage() {
               onChange={(event) => setEmail(event.target.value)}
               required
               autoComplete="email"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="you@example.com"
             />
           </label>
@@ -151,7 +152,7 @@ export default function SignupPage() {
               onChange={(event) => setPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="At least 8 characters"
             />
           </label>
@@ -164,7 +165,7 @@ export default function SignupPage() {
               onChange={(event) => setConfirmPassword(event.target.value)}
               required
               autoComplete="new-password"
-              className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-slate-500"
+              className="portal-field"
               placeholder="Confirm your password"
             />
           </label>

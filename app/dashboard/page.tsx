@@ -31,17 +31,17 @@ export default async function DashboardPage() {
     .where(eq(subscription.organizationId, organization.id))
 
   return (
-    <main className="mx-auto max-w-4xl p-8">
-      <p className="text-sm font-medium text-slate-500">Dashboard</p>
-      <h1 className="mt-2 text-3xl font-bold text-slate-950">
-        {organization.name}
-      </h1>
-      <p className="mt-4 text-slate-600">
+    <main className="portal-canvas px-6 py-16 text-white">
+      <div className="mx-auto max-w-5xl">
+      <p className="text-sm font-black uppercase tracking-[0.2em] text-green-400">Dashboard</p>
+      <h1 className="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{organization.name}</h1>
+      <p className="mt-4 text-zinc-400">
         Welcome, {session.user.name}. This organization is ready for Sprint 3 billing.
       </p>
 
-      <section className="mt-8 rounded-lg border border-slate-200 bg-white p-5">
-        <h2 className="text-lg font-semibold text-slate-950">Billing</h2>
+      <section className="portal-panel mt-10 p-7">
+        <p className="portal-eyebrow">Subscription overview</p>
+        <h2 className="mt-2 text-2xl font-black text-slate-950">Billing</h2>
         {currentSubscription ? (
           <dl className="mt-4 grid gap-4 sm:grid-cols-3">
             <div>
@@ -77,10 +77,11 @@ export default async function DashboardPage() {
         </Link>
         <Link
           href="/settings/organization"
-          className="rounded-md border border-slate-300 px-4 py-2 text-sm font-medium text-slate-900"
+          className="rounded-md border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:border-green-500/50 hover:text-green-400"
         >
           Organization settings
         </Link>
+      </div>
       </div>
     </main>
   )
