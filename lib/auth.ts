@@ -8,7 +8,7 @@ import {
 } from "@/lib/dev-verification-links"
 
 export const auth = betterAuth({
-  baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
+  baseURL: process.env.BETTER_AUTH_URL ?? "https://saas-intern-project.vercel.app/",
   secret: process.env.BETTER_AUTH_SECRET ?? "dev-secret-change-me",
   database: drizzleAdapter(db, {
     provider: "pg",
